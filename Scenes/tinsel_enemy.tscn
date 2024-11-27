@@ -33,10 +33,10 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtjya"]
-size = Vector2(232, 139)
+[sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
+radius = 55.0364
 
-[node name="Tinsel Enemy" type="Node2D"]
+[node name="Tinsel Enemy" type="CharacterBody2D"]
 position = Vector2(25, -1)
 script = ExtResource("1_02ifl")
 
@@ -48,9 +48,10 @@ frame_progress = 0.495956
 
 [node name="KillZone" parent="." instance=ExtResource("2_7bv0a")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(-37, -48.5)
-shape = SubResource("RectangleShape2D_jtjya")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZone"]
+position = Vector2(-32, -29)
+build_mode = 1
+polygon = PackedVector2Array(11, -114, 32, -96, 47, -98, 59, -89, 83, -81, 90, -61, 93, -29, 81, -25, 74, -10, 133, 28, 112, 24, 92, 25, 58, 25, -27, 24, -159, 15, -166, -5, -137, -24, -98, -34, -70, -43, -46, -41, -31, -74, -32, -92)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
@@ -59,3 +60,7 @@ target_position = Vector2(108, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
 target_position = Vector2(-67, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-14, -70)
+shape = SubResource("CircleShape2D_psd8y")

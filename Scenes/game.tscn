@@ -88,12 +88,6 @@ shape = SubResource("RectangleShape2D_gscgw")
 
 [node name="Node2D" parent="." instance=ExtResource("5_p3qng")]
 
-[node name="Control" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_6rrk3")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-player = NodePath("../Node2D/Player")
+[node name="Control" parent="." instance=ExtResource("6_6rrk3")]
 
 [editable path="Node2D"]

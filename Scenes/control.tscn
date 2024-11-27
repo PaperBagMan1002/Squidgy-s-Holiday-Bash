@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://r3nr3jscxg1e"]
+[gd_scene load_steps=4 format=3 uid="uid://r3nr3jscxg1e"]
 
 [ext_resource type="Script" path="res://Scenes/control.gd" id="1_3bxtx"]
+[ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="2_0gcb5"]
+[ext_resource type="Texture2D" uid="uid://cl7mb63tws65x" path="res://Assets/Health Bar Sprites Full.png" id="2_7swrh"]
 
-[node name="Control" type="CanvasLayer" node_paths=PackedStringArray("bar")]
+[node name="Control" type="CanvasLayer" node_paths=PackedStringArray("box1", "box2", "box3")]
 script = ExtResource("1_3bxtx")
-bar = NodePath("MarginContainer/NinePatchRect/ProgressBar")
+player = ExtResource("2_0gcb5")
+box1 = NodePath("MarginContainer/NinePatchRect/HBoxContainer/TextureRect")
+box2 = NodePath("MarginContainer/NinePatchRect/HBoxContainer/TextureRect2")
+box3 = NodePath("MarginContainer/NinePatchRect/HBoxContainer/TextureRect3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -14,6 +19,7 @@ offset_right = -952.0
 offset_bottom = -548.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.145, 1.145)
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
@@ -22,13 +28,19 @@ theme_override_constants/margin_bottom = 20
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/NinePatchRect"]
-layout_mode = 2
-offset_right = 200.0
-offset_bottom = 100.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/NinePatchRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/NinePatchRect"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/NinePatchRect/HBoxContainer"]
 layout_mode = 2
-offset_right = 300.0
-offset_bottom = 100.0
-value = 50.0
+texture = ExtResource("2_7swrh")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7swrh")
+
+[node name="TextureRect3" type="TextureRect" parent="MarginContainer/NinePatchRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7swrh")
