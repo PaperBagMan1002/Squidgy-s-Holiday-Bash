@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://cisbw7jcuuns0"]
+
+[ext_resource type="Script" path="res://Scripts/heart_pickup.gd" id="1_dhebf"]
+[ext_resource type="Texture2D" uid="uid://fp4j103wiqvn" path="res://Assets/Hearts2.png" id="1_ulvam"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkec6"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(0, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42b3w"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(240, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6qpl"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(480, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4g5i"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(720, 0, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr5f1"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(0, 240, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbbhv"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(240, 240, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pswh3"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(480, 240, 240, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stsxo"]
+atlas = ExtResource("1_ulvam")
+region = Rect2(720, 240, 240, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8k3t0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkec6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42b3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6qpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4g5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hr5f1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbbhv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pswh3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stsxo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5sxj5"]
+radius = 27.2947
+
+[node name="HeartPickup" type="Area2D"]
+position = Vector2(-1, 0)
+collision_mask = 2
+script = ExtResource("1_dhebf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-6, -84)
+sprite_frames = SubResource("SpriteFrames_8k3t0")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -31)
+shape = SubResource("CircleShape2D_5sxj5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://bll7m7opw8uxl"]
+
+[ext_resource type="Script" path="res://Scripts/tinsel_enemy.gd" id="1_02ifl"]
+[ext_resource type="Texture2D" uid="uid://dmfcthaatbjr" path="res://Assets/Untitled442_20241126222601.png" id="1_hkkcy"]
+[ext_resource type="PackedScene" uid="uid://dqf53v6xkk42u" path="res://kill_zone.tscn" id="2_7bv0a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6s14c"]
+atlas = ExtResource("1_hkkcy")
+region = Rect2(17, 0, 354, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04pf8"]
+atlas = ExtResource("1_hkkcy")
+region = Rect2(371, 0, 354, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3ufl"]
+atlas = ExtResource("1_hkkcy")
+region = Rect2(725, 0, 354, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyw6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6s14c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04pf8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3ufl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtjya"]
+size = Vector2(232, 139)
+
+[node name="Tinsel Enemy" type="Node2D"]
+position = Vector2(25, -1)
+script = ExtResource("1_02ifl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-39, -56)
+sprite_frames = SubResource("SpriteFrames_tyw6t")
+autoplay = "default"
+frame_progress = 0.495956
+
+[node name="KillZone" parent="." instance=ExtResource("2_7bv0a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(-37, -48.5)
+shape = SubResource("RectangleShape2D_jtjya")
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(-25, -60)
+target_position = Vector2(108, 0)
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(-25, -60)
+target_position = Vector2(-67, 0)
