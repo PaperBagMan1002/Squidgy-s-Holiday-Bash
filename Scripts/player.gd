@@ -64,6 +64,6 @@ func _physics_process(delta: float) -> void:
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print(body)
-	if body.name == "Tinsel Enemy" and atk:
+	if body.is_in_group("Enemy") and atk:
 		print("hit")
 		body.queue_free()

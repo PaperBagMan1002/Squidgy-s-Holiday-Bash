@@ -118,13 +118,13 @@ shape = SubResource("RectangleShape2D_gscgw")
 
 [node name="Control" parent="." instance=ExtResource("6_6rrk3")]
 
-[node name="Tinsel Enemy" parent="." instance=ExtResource("6_3jh4j")]
+[node name="Tinsel Enemy" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
 position = Vector2(5269, 11)
 
-[node name="Tinsel Enemy2" parent="." instance=ExtResource("6_3jh4j")]
+[node name="Tinsel Enemy2" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
 position = Vector2(4431, 12)
 
-[node name="Tinsel Enemy3" parent="." instance=ExtResource("6_3jh4j")]
+[node name="Tinsel Enemy3" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
 position = Vector2(3772, 12)
 
 [editable path="Node2D"]

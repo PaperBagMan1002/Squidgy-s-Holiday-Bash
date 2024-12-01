@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://w6xgn7haxax6" path="res://Assets/Tinsel_Move.png" id="2_f8nph"]
 [ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="4_b3kb1"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
+radius = 75.1066
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn0ip"]
 atlas = ExtResource("2_f8nph")
 region = Rect2(0, 0, 360, 540)
@@ -34,14 +37,13 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
-radius = 69.0652
-
 [node name="Tinsel Enemy" type="CharacterBody2D"]
 position = Vector2(25, -1)
-collision_layer = 8
-collision_mask = 2
 script = ExtResource("1_02ifl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-32, -66)
+shape = SubResource("CircleShape2D_psd8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-39, -56)
@@ -65,7 +67,3 @@ target_position = Vector2(108, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
 target_position = Vector2(-67, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-32, -66)
-shape = SubResource("CircleShape2D_psd8y")
