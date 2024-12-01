@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nsxmf7kgtje2"]
 
 [ext_resource type="PackedScene" uid="uid://ddtmk4t2inec5" path="res://Scenes/player.tscn" id="1_ls5gg"]
-[ext_resource type="Script" path="res://camera_2d.gd" id="2_yr5i7"]
+[ext_resource type="Script" path="res://Scripts/camera_2d.gd" id="2_yr5i7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -9,5 +9,7 @@
 
 [node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
 position = Vector2(0, -106)
+position_smoothing_enabled = true
+editor_draw_screen = false
 script = ExtResource("2_yr5i7")
 player = NodePath("../Player")

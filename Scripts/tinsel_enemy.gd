@@ -1,6 +1,7 @@
 extends Node2D
 
-const SPEED = 30
+const SPEED = 20
+
 
 
 var direction = -1
@@ -8,8 +9,6 @@ var direction = -1
 @onready var ray_cast_right = $RayCastRight
 @onready var ray_cast_left = $RayCastLeft
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if ray_cast_right.is_colliding():
@@ -20,5 +19,3 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = true
 		
 	position.x += direction * SPEED * delta
-
-		
