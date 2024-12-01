@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
-@export var health : HealthResource
+@export var health : healthResource
 @export var hitbox : Area2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var atk : bool

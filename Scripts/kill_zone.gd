@@ -1,5 +1,5 @@
 extends Area2D
-@export var player : HealthResource
+@export var player : healthResource
 @onready var timer: Timer = $Timer
 
 

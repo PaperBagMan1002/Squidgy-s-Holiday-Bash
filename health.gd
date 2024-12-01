@@ -1,4 +1,4 @@
 extends Resource
-class_name HealthResource
+class_name healthResource
 
 @export var health : int

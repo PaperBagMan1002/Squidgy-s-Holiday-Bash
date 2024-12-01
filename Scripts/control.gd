@@ -1,5 +1,5 @@
 extends CanvasLayer
-@export var player: HealthResource
+@export var player: healthResource
 @export var box1 : TextureRect
 @export var box2 : TextureRect
 @export var box3 : TextureRect
