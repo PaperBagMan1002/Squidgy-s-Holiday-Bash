@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="2_dw3lf"]
 [ext_resource type="Texture2D" uid="uid://13qqv7seccwc" path="res://Assets/idleattack.png" id="2_t8dnk"]
 [ext_resource type="Texture2D" uid="uid://c5r1h6qwsbooh" path="res://Assets/Squidgy Jump Animation.png" id="3_jxgaj"]
-[ext_resource type="Texture2D" path="res://Assets/Squidgy Run.png" id="5_2t5mq"]
+[ext_resource type="Texture2D" uid="uid://b301bp0o47wvv" path="res://Assets/Squidgy_Run.png" id="5_2t5mq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c0bm"]
 atlas = ExtResource("2_t8dnk")

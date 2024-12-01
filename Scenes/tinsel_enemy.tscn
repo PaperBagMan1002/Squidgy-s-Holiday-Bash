@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bll7m7opw8uxl"]
+[gd_scene load_steps=10 format=3 uid="uid://bll7m7opw8uxl"]
 
 [ext_resource type="Script" path="res://Scripts/tinsel_enemy.gd" id="1_02ifl"]
 [ext_resource type="PackedScene" uid="uid://dwx188diifent" path="res://Scenes/kill_zone.tscn" id="2_7bv0a"]
-[ext_resource type="Texture2D" path="res://Assets/Tinsel Move.png" id="2_f8nph"]
+[ext_resource type="Texture2D" uid="uid://w6xgn7haxax6" path="res://Assets/Tinsel_Move.png" id="2_f8nph"]
+[ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="4_b3kb1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn0ip"]
 atlas = ExtResource("2_f8nph")
@@ -49,6 +50,7 @@ autoplay = "default"
 frame_progress = 0.190646
 
 [node name="KillZone" parent="." instance=ExtResource("2_7bv0a")]
+player = ExtResource("4_b3kb1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZone"]
 position = Vector2(-55, -30)
