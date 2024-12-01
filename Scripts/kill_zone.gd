@@ -1,6 +1,7 @@
 extends Area2D
-@export var player : HealthResource
+@export var player : healthResource
 @onready var timer: Timer = $Timer
+
 
 func _on_body_entered(body: Node2D) -> void:
 	player.health -= 1

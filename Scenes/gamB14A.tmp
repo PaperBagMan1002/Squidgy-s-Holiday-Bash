@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=4 uid="uid://qv3cx0l06dep"]
+[gd_scene load_steps=13 format=4 uid="uid://qv3cx0l06dep"]
 
-[ext_resource type="Texture2D" path="res://Assets/Tile Maps official.png" id="1_qasjg"]
-[ext_resource type="Texture2D" path="res://Assets/Transparent decorations TileMap.png" id="2_vbu31"]
+[ext_resource type="Texture2D" uid="uid://dpy1dbiaq3p67" path="res://Assets/Tile_Maps_official.png" id="1_qasjg"]
+[ext_resource type="Texture2D" uid="uid://wcxf12kc0jlv" path="res://Assets/Transparent_decorations_TileMap.png" id="2_vbu31"]
+[ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="4_pf23e"]
 [ext_resource type="PackedScene" uid="uid://dwx188diifent" path="res://Scenes/kill_zone.tscn" id="4_xkdqq"]
 [ext_resource type="PackedScene" uid="uid://nsxmf7kgtje2" path="res://Scenes/playerCam.tscn" id="5_p3qng"]
 [ext_resource type="PackedScene" uid="uid://bll7m7opw8uxl" path="res://Scenes/tinsel_enemy.tscn" id="6_3jh4j"]
@@ -88,6 +89,7 @@ tile_set = SubResource("TileSet_p5i44")
 
 [node name="KillZone" parent="." instance=ExtResource("4_xkdqq")]
 position = Vector2(0, 381)
+player = ExtResource("4_pf23e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, 30)
@@ -116,13 +118,13 @@ shape = SubResource("RectangleShape2D_gscgw")
 
 [node name="Control" parent="." instance=ExtResource("6_6rrk3")]
 
-[node name="Tinsel Enemy" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
+[node name="Tinsel Enemy" parent="." instance=ExtResource("6_3jh4j")]
 position = Vector2(5269, 11)
 
-[node name="Tinsel Enemy2" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
+[node name="Tinsel Enemy2" parent="." instance=ExtResource("6_3jh4j")]
 position = Vector2(4431, 12)
 
-[node name="Tinsel Enemy3" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
+[node name="Tinsel Enemy3" parent="." instance=ExtResource("6_3jh4j")]
 position = Vector2(3772, 12)
 
 [editable path="Node2D"]

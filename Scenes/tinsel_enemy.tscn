@@ -1,57 +1,64 @@
-[gd_scene load_steps=9 format=3 uid="uid://bll7m7opw8uxl"]
+[gd_scene load_steps=10 format=3 uid="uid://bll7m7opw8uxl"]
 
 [ext_resource type="Script" path="res://Scripts/tinsel_enemy.gd" id="1_02ifl"]
-[ext_resource type="Texture2D" uid="uid://dmfcthaatbjr" path="res://Assets/Untitled442_20241126222601.png" id="1_hkkcy"]
-[ext_resource type="PackedScene" uid="uid://dqf53v6xkk42u" path="res://kill_zone.tscn" id="2_7bv0a"]
+[ext_resource type="PackedScene" uid="uid://dwx188diifent" path="res://Scenes/kill_zone.tscn" id="2_7bv0a"]
+[ext_resource type="Texture2D" uid="uid://w6xgn7haxax6" path="res://Assets/Tinsel_Move.png" id="2_f8nph"]
+[ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="4_b3kb1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6s14c"]
-atlas = ExtResource("1_hkkcy")
-region = Rect2(17, 0, 354, 540)
+[sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
+radius = 75.1066
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_04pf8"]
-atlas = ExtResource("1_hkkcy")
-region = Rect2(371, 0, 354, 540)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn0ip"]
+atlas = ExtResource("2_f8nph")
+region = Rect2(0, 0, 360, 540)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3ufl"]
-atlas = ExtResource("1_hkkcy")
-region = Rect2(725, 0, 354, 540)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvbh0"]
+atlas = ExtResource("2_f8nph")
+region = Rect2(720, 0, 360, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsrj3"]
+atlas = ExtResource("2_f8nph")
+region = Rect2(360, 0, 360, 540)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tyw6t"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6s14c")
+"texture": SubResource("AtlasTexture_jn0ip")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_04pf8")
+"texture": SubResource("AtlasTexture_mvbh0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_c3ufl")
+"texture": SubResource("AtlasTexture_wsrj3")
 }],
 "loop": true,
 "name": &"default",
 "speed": 2.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
-radius = 55.0364
-
 [node name="Tinsel Enemy" type="CharacterBody2D"]
 position = Vector2(25, -1)
 script = ExtResource("1_02ifl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-32, -66)
+shape = SubResource("CircleShape2D_psd8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-39, -56)
 sprite_frames = SubResource("SpriteFrames_tyw6t")
 autoplay = "default"
-frame_progress = 0.495956
+frame_progress = 0.190646
 
 [node name="KillZone" parent="." instance=ExtResource("2_7bv0a")]
+player = ExtResource("4_b3kb1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZone"]
-position = Vector2(-32, -29)
+position = Vector2(-55, -30)
+rotation = 0.0043085
 build_mode = 1
-polygon = PackedVector2Array(11, -114, 32, -96, 47, -98, 59, -89, 83, -81, 90, -61, 93, -29, 81, -25, 74, -10, 133, 28, 112, 24, 92, 25, 58, 25, -27, 24, -159, 15, -166, -5, -137, -24, -98, -34, -70, -43, -46, -41, -31, -74, -32, -92)
+polygon = PackedVector2Array(11, -114, 32, -96, 47, -98, 59, -89, 83, -81, 90, -61, 93, -29, 81, -25, 74, -10, 100, 28, 100, 24, 92, 25, 58, 25, -27, 24, -159, 15, -166, -5, -137, -24, -98, -34, -70, -43, -46, -41, -31, -74, -32, -92)
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
@@ -60,7 +67,3 @@ target_position = Vector2(108, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
 target_position = Vector2(-67, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-14, -70)
-shape = SubResource("CircleShape2D_psd8y")
