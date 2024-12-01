@@ -8,7 +8,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 	if player.health <=0:
 		body.get_node("CollisionShape2D").queue_free()
-		Engine.time_scale = 0.5
+		Engine.time_scale = 0.3
 		timer.start()
 	
 	

@@ -20,3 +20,4 @@ func _process(delta: float) -> void:
 		
 	position.x += direction * SPEED * delta
 	
+	

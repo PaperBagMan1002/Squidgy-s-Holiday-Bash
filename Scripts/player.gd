@@ -6,8 +6,12 @@ const JUMP_VELOCITY = -500.0
 @export var health : healthResource
 @export var hitbox : Area2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@export var knockbackPower: int = 800
+
+
 var atk : bool
 var sHP
+
 func _ready() -> void:
 	#sets saved hp
 	sHP = health.health
@@ -67,3 +71,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemy") and atk:
 		print("hit")
 		body.queue_free()
+		
+func knockback(tinselenemyVelocity: Vector2):
+	var kb_direction = (tinselenemyVelocity - velocity).normalized() * knockbackPower
+	velocity = kb_direction
+	velocity.x -= 800
+	move_and_slide()

@@ -24,4 +24,8 @@ func _process(_delta: float) -> void:
 		box1.texture = on 
 		box2.texture = off
 		box3.texture = off
+	elif player.health == 0:
+		box1.texture = off
+		box2.texture = off
+		box3.texture = off
 		

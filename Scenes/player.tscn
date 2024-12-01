@@ -120,9 +120,11 @@ radius = 46.0109
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("hitbox")]
 position = Vector2(-6, -84)
+collision_layer = 2
 script = ExtResource("1_l14gq")
 health = ExtResource("2_dw3lf")
 hitbox = NodePath("hitbox")
+knockbackPower = 1000
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -9)

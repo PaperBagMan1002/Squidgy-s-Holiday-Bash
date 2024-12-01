@@ -69,7 +69,7 @@ texture = ExtResource("2_vbu31")
 5:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_p5i44"]
-physics_layer_0/collision_layer = 9
+physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_kvoh5")
 sources/1 = SubResource("TileSetAtlasSource_ym5y6")
@@ -114,10 +114,13 @@ shape = SubResource("RectangleShape2D_gscgw")
 
 [node name="Node2D" parent="." instance=ExtResource("5_p3qng")]
 
+[node name="Player" parent="Node2D" index="0"]
+knockbackPower = 800
+
 [node name="Control" parent="." instance=ExtResource("6_6rrk3")]
 
 [node name="Tinsel Enemy" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
-position = Vector2(5269, 11)
+position = Vector2(544, 124)
 
 [node name="Tinsel Enemy2" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
 position = Vector2(4431, 12)
