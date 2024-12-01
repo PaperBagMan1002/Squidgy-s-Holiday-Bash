@@ -19,3 +19,4 @@ func _process(delta: float) -> void:
 		animated_sprite.flip_h = true
 		
 	position.x += direction * SPEED * delta
+	
