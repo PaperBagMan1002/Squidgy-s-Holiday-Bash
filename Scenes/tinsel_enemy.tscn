@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bll7m7opw8uxl"]
+[gd_scene load_steps=36 format=3 uid="uid://bll7m7opw8uxl"]
 
 [ext_resource type="Script" path="res://Scripts/tinsel_enemy.gd" id="1_02ifl"]
 [ext_resource type="PackedScene" uid="uid://dwx188diifent" path="res://Scenes/kill_zone.tscn" id="2_7bv0a"]
@@ -190,7 +190,18 @@ animations = [{
 "loop": true,
 "name": &"Move",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbna5")
+}],
+"loop": true,
+"name": &"Sleep",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftany"]
+size = Vector2(1275, 424)
 
 [node name="Tinsel Enemy" type="CharacterBody2D"]
 position = Vector2(25, -1)
@@ -205,9 +216,9 @@ shape = SubResource("CircleShape2D_psd8y")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-39, -56)
 sprite_frames = SubResource("SpriteFrames_tyw6t")
-animation = &"Awake"
-autoplay = "Move"
-frame_progress = 0.959475
+animation = &"Move"
+autoplay = "Sleep"
+frame_progress = 0.0988668
 
 [node name="KillZone" parent="." instance=ExtResource("2_7bv0a")]
 
@@ -224,3 +235,16 @@ target_position = Vector2(108, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
 target_position = Vector2(-199, 0)
+
+[node name="Sensor" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor"]
+position = Vector2(-26.5, -237)
+shape = SubResource("RectangleShape2D_ftany")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Sensor" to="." method="_on_sensor_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
