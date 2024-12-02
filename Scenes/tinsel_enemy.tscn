@@ -1,18 +1,19 @@
-[gd_scene load_steps=34 format=3 uid="uid://bll7m7opw8uxl"]
+[gd_scene load_steps=35 format=3 uid="uid://bll7m7opw8uxl"]
 
 [ext_resource type="Script" path="res://Scripts/tinsel_enemy.gd" id="1_02ifl"]
 [ext_resource type="PackedScene" uid="uid://dwx188diifent" path="res://Scenes/kill_zone.tscn" id="2_7bv0a"]
 [ext_resource type="Texture2D" uid="uid://bxoam0jrycd8p" path="res://Assets/Tinsel Awake1.png" id="2_afm72"]
 [ext_resource type="Texture2D" uid="uid://86ys884uwqa6" path="res://Assets/Tinsel Awake2.png" id="3_uglpa"]
-[ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="4_b3kb1"]
 [ext_resource type="Texture2D" uid="uid://dr0eggmo021yk" path="res://Assets/Tinsel Awake3.png" id="4_vcodm"]
 [ext_resource type="Texture2D" uid="uid://dvc1mgoxog58c" path="res://Assets/Tinsel Awake4.png" id="5_6kxxp"]
 [ext_resource type="Texture2D" uid="uid://xbc4vt5jtra5" path="res://Assets/Tinsel Awake5.png" id="6_d7wv1"]
 [ext_resource type="Texture2D" uid="uid://20kt06omwdpl" path="res://Assets/Tinsel Awake6.png" id="7_klr53"]
 [ext_resource type="Texture2D" uid="uid://dfih81otojw68" path="res://Assets/Tisnel Awake7.png" id="8_8oe8u"]
+[ext_resource type="Texture2D" uid="uid://cjuxshr52hyp4" path="res://Assets/Tinsel Awake idle.png" id="9_p68vp"]
+[ext_resource type="Texture2D" uid="uid://37tr2ya1w0ql" path="res://Assets/Tinsel move 3.png" id="9_qnwkn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
-radius = 77.0065
+radius = 84.0238
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nbna5"]
 atlas = ExtResource("2_afm72")
@@ -37,14 +38,6 @@ region = Rect2(0, 0, 360, 540)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ysu0e"]
 atlas = ExtResource("5_6kxxp")
 region = Rect2(720, 0, 360, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4x64c"]
-atlas = ExtResource("5_6kxxp")
-region = Rect2(360, 0, 360, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1kaoo"]
-atlas = ExtResource("5_6kxxp")
-region = Rect2(0, 0, 360, 540)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3romx"]
 atlas = ExtResource("6_d7wv1")
@@ -82,19 +75,28 @@ region = Rect2(360, 0, 360, 540)
 atlas = ExtResource("8_8oe8u")
 region = Rect2(0, 0, 360, 540)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_coldj"]
-load_path = "res://.godot/imported/move 2 tinsel.png-853fe048db94a65e2af25bfbd9fc746a.ctex"
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sg722"]
-atlas = SubResource("CompressedTexture2D_coldj")
-region = Rect2(0, 0, 360, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iqkft"]
-atlas = SubResource("CompressedTexture2D_coldj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_d51ja"]
+atlas = ExtResource("9_p68vp")
 region = Rect2(720, 0, 360, 540)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_461ki"]
-atlas = SubResource("CompressedTexture2D_coldj")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lruna"]
+atlas = ExtResource("9_p68vp")
+region = Rect2(360, 0, 360, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stkea"]
+atlas = ExtResource("9_p68vp")
+region = Rect2(0, 0, 360, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk44g"]
+atlas = ExtResource("9_qnwkn")
+region = Rect2(0, 0, 360, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1312"]
+atlas = ExtResource("9_qnwkn")
+region = Rect2(720, 0, 360, 540)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qi7a5"]
+atlas = ExtResource("9_qnwkn")
 region = Rect2(360, 0, 360, 540)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tyw6t"]
@@ -117,12 +119,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ysu0e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4x64c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1kaoo")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3romx")
@@ -166,13 +162,30 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sg722")
+"texture": SubResource("AtlasTexture_d51ja")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iqkft")
+"texture": SubResource("AtlasTexture_lruna")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_461ki")
+"texture": SubResource("AtlasTexture_stkea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lruna")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk44g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1312")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qi7a5")
 }],
 "loop": true,
 "name": &"Move",
@@ -186,17 +199,17 @@ collision_mask = 10
 script = ExtResource("1_02ifl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-32, -66)
+position = Vector2(-35, -82)
 shape = SubResource("CircleShape2D_psd8y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-39, -56)
 sprite_frames = SubResource("SpriteFrames_tyw6t")
-animation = &"Move"
+animation = &"Awake"
 autoplay = "Move"
+frame_progress = 0.959475
 
 [node name="KillZone" parent="." instance=ExtResource("2_7bv0a")]
-player = ExtResource("4_b3kb1")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KillZone"]
 position = Vector2(-55, -30)
@@ -211,9 +224,3 @@ target_position = Vector2(108, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(-25, -60)
 target_position = Vector2(-199, 0)
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
