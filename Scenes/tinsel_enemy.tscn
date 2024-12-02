@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b4kc23nwj07gd" path="res://Scenes/healthResource.tres" id="4_b3kb1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_psd8y"]
-radius = 75.1066
+radius = 77.0065
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jn0ip"]
 atlas = ExtResource("2_f8nph")

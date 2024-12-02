@@ -116,7 +116,7 @@ animations = [{
 radius = 22.0227
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_waca3"]
-radius = 46.0109
+radius = 36.7054
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("hitbox")]
 position = Vector2(-6, -84)
@@ -138,11 +138,13 @@ position = Vector2(5, 62)
 shape = SubResource("CircleShape2D_fhvfw")
 
 [node name="hitbox" type="Area2D" parent="."]
+position = Vector2(-1, 14)
+scale = Vector2(0.825976, 0.827386)
 collision_layer = 15
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(30, 72)
+position = Vector2(32.6886, 73.7262)
 shape = SubResource("CircleShape2D_waca3")
 
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
