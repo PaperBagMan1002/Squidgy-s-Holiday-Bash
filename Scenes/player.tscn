@@ -138,9 +138,11 @@ position = Vector2(5, 62)
 shape = SubResource("CircleShape2D_fhvfw")
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 position = Vector2(30, 72)
 shape = SubResource("CircleShape2D_waca3")
 
-[connection signal="body_entered" from="hitbox" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

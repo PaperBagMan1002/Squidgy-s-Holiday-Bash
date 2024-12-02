@@ -94,7 +94,6 @@ position = Vector2(0, 30)
 shape = SubResource("WorldBoundaryShape2D_jgnln")
 
 [node name="Label" type="Label" parent="."]
-visible = false
 offset_left = -452.0
 offset_top = -8.0
 offset_right = -343.0
@@ -129,3 +128,4 @@ position = Vector2(4431, 12)
 position = Vector2(3772, 12)
 
 [editable path="Node2D"]
+[editable path="Node2D/Player"]

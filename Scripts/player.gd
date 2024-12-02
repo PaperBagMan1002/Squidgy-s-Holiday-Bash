@@ -65,15 +65,16 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		move_and_slide()
-	
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	print(body)
-	if body.is_in_group("Enemy") and atk:
-		print("hit")
-		body.queue_free()
 		
 func knockback(tinselenemyVelocity: Vector2):
 	var kb_direction = (tinselenemyVelocity - velocity).normalized() * knockbackPower
 	velocity = kb_direction
 	velocity.x -= 800
 	move_and_slide()
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	print(body)
+	if body.is_in_group("Enemy") and atk:
+		print("hit")
+		body.queue_free()
