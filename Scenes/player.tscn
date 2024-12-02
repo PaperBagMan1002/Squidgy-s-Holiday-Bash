@@ -138,8 +138,8 @@ position = Vector2(5, 62)
 shape = SubResource("CircleShape2D_fhvfw")
 
 [node name="hitbox" type="Area2D" parent="."]
-position = Vector2(-1, 14)
-scale = Vector2(0.825976, 0.827386)
+position = Vector2(1, 4)
+scale = Vector2(0.897242, 0.860166)
 collision_layer = 15
 collision_mask = 15
 
