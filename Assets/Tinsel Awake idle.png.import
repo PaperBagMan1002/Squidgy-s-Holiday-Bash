@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w6xgn7haxax6"
-path="res://.godot/imported/Tinsel_Move.png-194d7c865d595f5d90c39239a2b5946b.ctex"
+uid="uid://cjuxshr52hyp4"
+path="res://.godot/imported/Tinsel Awake idle.png-7346fb9ef13993ef670bda1922843860.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tinsel_Move.png"
-dest_files=["res://.godot/imported/Tinsel_Move.png-194d7c865d595f5d90c39239a2b5946b.ctex"]
+source_file="res://Assets/Tinsel Awake idle.png"
+dest_files=["res://.godot/imported/Tinsel Awake idle.png-7346fb9ef13993ef670bda1922843860.ctex"]
 
 [params]
 

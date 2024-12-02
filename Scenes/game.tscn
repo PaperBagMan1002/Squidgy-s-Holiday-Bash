@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://qv3cx0l06dep"]
+[gd_scene load_steps=13 format=4 uid="uid://qv3cx0l06dep"]
 
 [ext_resource type="Texture2D" uid="uid://dpy1dbiaq3p67" path="res://Assets/Tile_Maps_official.png" id="1_qasjg"]
 [ext_resource type="Texture2D" uid="uid://wcxf12kc0jlv" path="res://Assets/Transparent_decorations_TileMap.png" id="2_vbu31"]
@@ -79,6 +79,9 @@ sources/1 = SubResource("TileSetAtlasSource_ym5y6")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gscgw"]
 size = Vector2(20, 222.025)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v42bi"]
+size = Vector2(193, 438)
+
 [node name="Game" type="Node2D"]
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
@@ -107,10 +110,17 @@ text = "← Left
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-452, -8)
 scale = Vector2(2.94825, 3.09874)
+collision_layer = 11
+collision_mask = 11
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(65.1235, 2.9044)
 shape = SubResource("RectangleShape2D_gscgw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1032.65, -68.4149)
+scale = Vector2(0.339184, 0.322712)
+shape = SubResource("RectangleShape2D_v42bi")
 
 [node name="Node2D" parent="." instance=ExtResource("5_p3qng")]
 
@@ -120,13 +130,13 @@ knockbackPower = 800
 [node name="Control" parent="." instance=ExtResource("6_6rrk3")]
 
 [node name="Tinsel Enemy" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
-position = Vector2(544, 124)
+position = Vector2(3264, 12)
 
 [node name="Tinsel Enemy2" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
-position = Vector2(4431, 12)
+position = Vector2(5195, 12)
 
 [node name="Tinsel Enemy3" parent="." groups=["Enemy"] instance=ExtResource("6_3jh4j")]
-position = Vector2(3772, 12)
+position = Vector2(4201, 12)
 
 [editable path="Node2D"]
 [editable path="Node2D/Player"]
